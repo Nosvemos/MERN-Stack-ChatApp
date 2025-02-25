@@ -9,7 +9,7 @@ import { useAuthStore } from "./store/useAuthStore.js";
 import {useEffect} from "react";
 
 function App() {
-  const { authUser, checkAuth } = useAuthStore();
+  const { authUser, checkAuth} = useAuthStore();
 
   useEffect(() => {
      checkAuth();
