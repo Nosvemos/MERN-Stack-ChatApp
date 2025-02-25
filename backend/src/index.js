@@ -19,8 +19,7 @@ app.use(cookieParser());
 app.use(cors(
 	{
 		origin: 'http://localhost:5173', // Vite port
-		credentials: true,
-
+		credentials: true
 	}
 ));
 
