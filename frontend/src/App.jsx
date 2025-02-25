@@ -1,5 +1,10 @@
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage.jsx";
+import SignupPage from "./pages/SignupPage.jsx";
+import SettingsPage from "./pages/SettingsPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import ProfilePage from "./pages/ProfilePage.jsx";
 
 function App() {
   return (
