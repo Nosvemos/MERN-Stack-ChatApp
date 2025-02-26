@@ -51,7 +51,7 @@ const SignupPage = () => {
 					</div>
 
 					{/* Form */}
-					<form onSubmit={handleSubmit} className="space-y-6">
+					<form onSubmit={handleSubmit} className="space-y-8">
 						<div className="form-control">
 							<label className="label">
 								<span className="label-text font-medium pb-1">Full Name</span>
@@ -62,11 +62,12 @@ const SignupPage = () => {
 								</div>
 								<input
 									type="text"
-									className={`input input-primary input-bordered w-full pl-10 z-0`}
+									className={`input input-primary input-bordered validator w-full pl-10 z-0`}
 									placeholder="John Doe"
-									value={formData.fullName}
+									value={formData.fullName} required={true}
 									onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
 								/>
+								<div className="absolute left-0 validator-hint text-xs">Please don't leave full name as blank.</div>
 							</div>
 						</div>
 
@@ -80,11 +81,12 @@ const SignupPage = () => {
 								</div>
 								<input
 									type="email"
-									className={`input input-primary input-bordered w-full pl-10 z-0`}
+									className={`input validator input-primary input-bordered w-full pl-10 z-0`}
 									placeholder="you@example.com"
-									value={formData.email}
+									value={formData.email} required={true}
 									onChange={(e) => setFormData({ ...formData, email: e.target.value })}
 								/>
+								<div className="absolute left-0 validator-hint text-xs">Enter valid email address.</div>
 							</div>
 						</div>
 
@@ -94,26 +96,30 @@ const SignupPage = () => {
 							</label>
 							<div className="relative">
 								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
-									<Lock className="size-5 text-primary" />
+									<Lock className="size-5 text-primary mb-6" />
 								</div>
 								<input
 									type={showPassword ? "text" : "password"}
-									className={`input input-primary input-bordered w-full pl-10 z-0`}
+									className={`input validator input-primary input-bordered w-full pl-10 z-0`}
 									placeholder="••••••••"
-									value={formData.password}
+									value={formData.password} minLength={6}
+									pattern="{6,}" required={true}
+									title="Must be more than 6 characters."
 									onChange={(e) => setFormData({ ...formData, password: e.target.value })}
 								/>
 								<button
 									type="button"
 									className="absolute inset-y-0 right-0 pr-3 flex items-center"
-									onClick={() => setShowPassword(!showPassword)}
-								>
+									onClick={() => setShowPassword(!showPassword)}>
 									{showPassword ? (
-										<EyeOff className="size-5 text-primary" />
+										<EyeOff className="size-5 text-primary mb-6" />
 									) : (
-										<Eye className="size-5 text-primary" />
+										<Eye className="size-5 text-primary mb-6" />
 									)}
 								</button>
+								<p className="validator-hint">
+									Must be more than 6 characters.
+								</p>
 							</div>
 						</div>
 
