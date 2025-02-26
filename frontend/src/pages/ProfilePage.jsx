@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Camera, User, Mail } from 'lucide-react'
-import toast from "react-hot-toast";
+import { toast } from 'react-toastify';
 
 import { useAuthStore } from "../store/useAuthStore.js";
 import { useUserStore } from "../store/useUserStore.js";

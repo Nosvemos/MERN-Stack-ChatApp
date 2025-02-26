@@ -6,3 +6,4 @@
 @plugin "daisyui" {
     themes: all;
 }
+@import 'react-toastify/dist/ReactToastify.css';

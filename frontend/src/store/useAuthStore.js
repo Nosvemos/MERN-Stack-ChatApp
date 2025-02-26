@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import toast from "react-hot-toast";
 import { io } from "socket.io-client";
+import { toast } from 'react-toastify';
 
 import { axiosInstance } from "../lib/axios.js";
 
@@ -24,7 +24,6 @@ export const useAuthStore = create((set, get) => ({
 			await get().connectSocket();
 			set({ authUser: res.data });
 		} catch (error) {
-			console.error('Error in checkAuth:', error);
 			set({ authUser: null });
 		} finally {
 			set({ isCheckingAuth: false });

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Loader } from 'lucide-react';
-import { Toaster } from "react-hot-toast";
+import { ToastContainer } from 'react-toastify';
 
 import Navbar from "./components/Navbar";
 
@@ -38,7 +38,7 @@ function App() {
          <Route path="/settings" element={<SettingsPage/>} />
          <Route path="/profile" element={authUser ? <ProfilePage/>  : <Navigate to="/login" />} />
       </Routes>
-      <Toaster/>
+      <ToastContainer toastClassName={'!bg-base-100 !shadow-xl !text-base-content/80'} position="top-center" autoClose={3000}/>
     </div>
   )
 }
