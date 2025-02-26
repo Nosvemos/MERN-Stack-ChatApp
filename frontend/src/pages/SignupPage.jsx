@@ -54,15 +54,15 @@ const SignupPage = () => {
 					<form onSubmit={handleSubmit} className="space-y-6">
 						<div className="form-control">
 							<label className="label">
-								<span className="label-text font-medium">Full Name</span>
+								<span className="label-text font-medium pb-1">Full Name</span>
 							</label>
 							<div className="relative">
-								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-									<User className="size-5 text-base-content/40" />
+								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+									<User className="size-5 text-primary" />
 								</div>
 								<input
 									type="text"
-									className={`input input-bordered w-full pl-10`}
+									className={`input input-primary input-bordered w-full pl-10 z-0`}
 									placeholder="John Doe"
 									value={formData.fullName}
 									onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -72,15 +72,15 @@ const SignupPage = () => {
 
 						<div className="form-control">
 							<label className="label">
-								<span className="label-text font-medium">Email</span>
+								<span className="label-text font-medium pb-1">Email</span>
 							</label>
 							<div className="relative">
-								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-									<Mail className="size-5 text-base-content/40" />
+								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+									<Mail className="size-5 text-primary" />
 								</div>
 								<input
 									type="email"
-									className={`input input-bordered w-full pl-10`}
+									className={`input input-primary input-bordered w-full pl-10 z-0`}
 									placeholder="you@example.com"
 									value={formData.email}
 									onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -90,15 +90,15 @@ const SignupPage = () => {
 
 						<div className="form-control">
 							<label className="label">
-								<span className="label-text font-medium">Password</span>
+								<span className="label-text font-medium pb-1">Password</span>
 							</label>
 							<div className="relative">
-								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-									<Lock className="size-5 text-base-content/40" />
+								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+									<Lock className="size-5 text-primary" />
 								</div>
 								<input
 									type={showPassword ? "text" : "password"}
-									className={`input input-bordered w-full pl-10`}
+									className={`input input-primary input-bordered w-full pl-10 z-0`}
 									placeholder="••••••••"
 									value={formData.password}
 									onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -109,9 +109,9 @@ const SignupPage = () => {
 									onClick={() => setShowPassword(!showPassword)}
 								>
 									{showPassword ? (
-										<EyeOff className="size-5 text-base-content/40" />
+										<EyeOff className="size-5 text-primary" />
 									) : (
-										<Eye className="size-5 text-base-content/40" />
+										<Eye className="size-5 text-primary" />
 									)}
 								</button>
 							</div>

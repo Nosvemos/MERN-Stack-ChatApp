@@ -52,15 +52,15 @@ const LoginPage = () => {
 					<form onSubmit={handleSubmit} className="space-y-6">
 						<div className="form-control">
 							<label className="label">
-								<span className="label-text font-medium">Email</span>
+								<span className="label-text font-medium pb-1">Email</span>
 							</label>
 							<div className="relative">
-								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-									<Mail className="h-5 w-5 text-base-content/40" />
+								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+									<Mail className="h-5 w-5 text-primary" />
 								</div>
 								<input
 									type="email"
-									className={`input input-bordered w-full pl-10`}
+									className={`input input-primary input-bordered w-full pl-10 z-0`}
 									placeholder="you@example.com"
 									value={formData.email}
 									onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -70,15 +70,15 @@ const LoginPage = () => {
 
 						<div className="form-control">
 							<label className="label">
-								<span className="label-text font-medium">Password</span>
+								<span className="label-text font-medium pb-1">Password</span>
 							</label>
 							<div className="relative">
-								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-									<Lock className="h-5 w-5 text-base-content/40" />
+								<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
+									<Lock className="h-5 w-5 text-primary" />
 								</div>
 								<input
 									type={showPassword ? "text" : "password"}
-									className={`input input-bordered w-full pl-10`}
+									className={`input input-primary input-bordered w-full pl-10 z-0`}
 									placeholder="••••••••"
 									value={formData.password}
 									onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -89,9 +89,9 @@ const LoginPage = () => {
 									onClick={() => setShowPassword(!showPassword)}
 								>
 									{showPassword ? (
-										<EyeOff className="h-5 w-5 text-base-content/40" />
+										<EyeOff className="h-5 w-5 text-primary" />
 									) : (
-										<Eye className="h-5 w-5 text-base-content/40" />
+										<Eye className="h-5 w-5 text-primary" />
 									)}
 								</button>
 							</div>

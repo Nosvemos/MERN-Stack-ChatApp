@@ -15,25 +15,25 @@ const Navbar = () => {
 							<div className="size-9 rounded-lg bg-primary/10 flex items-center justify-center">
 								<MessageSquare className="w-5 h-5 text-primary" />
 							</div>
-							<h1 className="text-lg font-bold">ChatApp</h1>
+							<h1 className="text-lg text-primary font-bold">ChatApp</h1>
 						</Link>
 					</div>
 
 					<div className="flex items-center gap-2">
 						<Link to={"/settings"} className={`btn btn-sm gap-2 transition-colors`}>
-							<Settings className="w-4 h-4" />
+							<Settings className="w-4 h-4 text-primary" />
 							<span className="hidden sm:inline">Settings</span>
 						</Link>
 
 						{authUser && (
 							<>
 								<Link to={"/profile"} className={`btn btn-sm gap-2`}>
-									<User className="size-5" />
+									<User className="size-5 text-primary" />
 									<span className="hidden sm:inline">Profile</span>
 								</Link>
 
 								<button className="btn btn-sm flex gap-2 items-center" onClick={logout}>
-									<LogOut className="size-5" />
+									<LogOut className="size-5 text-primary" />
 									<span className="hidden sm:inline">Logout</span>
 								</button>
 							</>

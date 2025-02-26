@@ -46,16 +46,16 @@ const ChatContainer = () => {
 						className={`chat ${message.senderId === authUser._id ? "chat-end" : "chat-start"}`}
 						ref={messageEndRef}>
 						<div className="chat-image avatar">
-							<div className="size-10 rounded-full border">
+							<div className="size-10 rounded-full border border-primary">
 								<img src={message.senderId === authUser._id ? authUser.profilePic || "/avatar.png" : selectedUser.profilePic || "/avatar.png"} alt="profile pic"/>
 							</div>
 						</div>
 						<div className="chat-header mb-1">
-							<time className="text-xs opacity-50 ml-1">
+							<time className="text-xs text-primary ml-1">
 								{formatMessageTime(message.createdAt)}
 							</time>
 						</div>
-						<div className={`chat-bubble flex flex-col ${message.senderId === authUser._id ? "bg-primary" : "bg-base-200"}`}>
+						<div className={`chat-bubble rounded-xl flex flex-col ${message.senderId === authUser._id ? "bg-primary" : "bg-base-200"}`}>
 							{message.image && (
 								<img src={message.image} alt="Attachment" className="sm:max-w-[200px] rounded-md mb-2 mt-1"/>
 							)}
@@ -63,6 +63,11 @@ const ChatContainer = () => {
 						</div>
 					</div>
 				))}
+				{messages.length <= 0 &&
+					<div className="flex items-center justify-center">
+						<span className={'text-primary mt-10'}>No messages found before.</span>
+					</div>
+				}
 			</div>
 			<MessageInput/>
 		</div>

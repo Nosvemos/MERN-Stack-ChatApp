@@ -25,7 +25,7 @@ const Sidebar = () => {
 		<aside className="h-full w-20 lg:w-72 border-r border-base-300 flex flex-col transition-all duration-200">
 			<div className="border-b border-base-300 w-full p-5">
 				<div className="flex items-center gap-2">
-					<Users className="size-6" />
+					<Users className="size-6 text-primary" />
 					<span className="font-medium hidden lg:block">Contacts</span>
 				</div>
 				{/* TODO: Online filter toggle */}
@@ -35,11 +35,11 @@ const Sidebar = () => {
 							type="checkbox"
 							checked={showOnlineOnly}
 							onChange={(e) => setShowOnlineOnly(e.target.checked)}
-							className="checkbox checkbox-sm"
+							className="checkbox checkbox-primary checkbox-sm"
 						/>
 						<span className="text-sm">Show online only</span>
 					</label>
-					<span className="text-xs text-zinc-500">({onlineUsers.length - 1} online)</span>
+					<span className="text-xs text-primary">({onlineUsers.length - 1} online)</span>
 				</div>
 			</div>
 
@@ -71,7 +71,7 @@ const Sidebar = () => {
 						{/* User info - only visible on larger screens */}
 						<div className="hidden lg:block text-left min-w-0">
 							<div className="font-medium truncate">{user.fullName}</div>
-							<div className="text-sm text-zinc-400">
+							<div className="text-sm text-primary">
 								{onlineUsers.includes(user._id) ? "Online" : "Offline"}
 							</div>
 						</div>
@@ -79,7 +79,7 @@ const Sidebar = () => {
 				))}
 
 				{filteredUsers.length === 0 && (
-					<div className="text-center text-zinc-500 py-4">No online users</div>
+					<div className="text-center text-primary py-4">No online users</div>
 				)}
 			</div>
 		</aside>
