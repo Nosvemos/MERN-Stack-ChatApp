@@ -4,9 +4,11 @@ import { Camera, User, Mail } from 'lucide-react'
 import toast from "react-hot-toast";
 
 import { useAuthStore } from "../store/useAuthStore.js";
+import { useUserStore } from "../store/useUserStore.js";
 
 const ProfilePage = () => {
-	const { authUser, isUpdatingProfile, updateProfile } = useAuthStore();
+	const { authUser } = useAuthStore();
+	const { isUpdatingProfile, updateProfile } = useUserStore();
 	const [selectedImage, setSelectedImage] = useState(null);
 	const handleImageUpload = async(e) => {
 		const file = e.target.files[0];
