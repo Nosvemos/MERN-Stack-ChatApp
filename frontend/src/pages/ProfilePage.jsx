@@ -14,6 +14,11 @@ const ProfilePage = () => {
 		const file = e.target.files[0];
 		if(!file) return;
 
+		if(!file.type.startsWith("image/")) {
+			toast.error("Please select an image file.");
+			e.target.value = "";
+			return;
+		}
 		// Check file size - 10MB
 		const maxSize = 10 * 1024 * 1024;
 
@@ -25,7 +30,7 @@ const ProfilePage = () => {
 
 		const reader = new FileReader();
 		reader.readAsDataURL(file);
-		reader.onload = async() => {
+		reader.onloadend = async() => {
 			const base64Image = reader.result;
 			setSelectedImage(base64Image);
 			await updateProfile({ profilePic: base64Image });
