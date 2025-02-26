@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 import { Mail, Eye, EyeOff, Lock, Loader2, LogIn } from "lucide-react";
 
-import { useAuthStore } from "../store/useAuthStore";
+import { useAuthStore } from "../store/useAuthStore.js";
 import AuthImagePattern from "../components/AuthImagePattern";
 
 const LoginPage = () => {
